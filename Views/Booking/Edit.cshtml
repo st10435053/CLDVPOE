@@ -1,0 +1,34 @@
+﻿@model EventEaseApp.Models.Booking
+
+@{
+	ViewData["Title"] = "Edit Booking";
+}
+
+<h2>ViewData["Title"]</h2>
+<form asp-action="Edit" method="post">
+	<div class="form-group">
+		<label for="BookingId">BookingId</label>
+		<input type="number" class="form-control" id="BookingId" name="BookingId" value="@Model.BookingId" required/>
+	</div>
+
+
+<div class="form-group">
+		<label for="VenueId">VenueId</label>
+		<input type="number" class="form-control" id="VenueId" name="VenueId" value="@Model.VenueId" required/>
+	</div>
+
+	<div class="form-group">
+		<label for="EventgId">EventId</label>
+		<input type="number" class="form-control" id="EventId" name="EventId" value="@Model.EventId" required />
+	</div>
+
+	<div class="form-group">
+		<label for="BookingDate">BookingDate</label>
+		<input type="number" class="form-control" id="BookingDate" name="BookingDate" value="@Model.BookingDate" required />
+	</div>
+
+	<button type="Submit" class="btn btn-primary">Update Booking</button>
+
+	<a href="@Url.Action("Index","Booking")" class="btn btn-secondary">Back to list</a>
+
+</form>

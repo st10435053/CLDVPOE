@@ -1,0 +1,38 @@
+﻿@model IEnumerable<EventEaseApp.Models.Booking>
+
+@{
+	ViewData["Title"] = "Booking List";
+}
+
+<h2>ViewData["Title"]</h2>
+
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Booking Id</th>
+			<th>Venue Id</th>
+			<th>Event Id</th>
+			<th>Booking Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var booking in Model){
+			<tr>
+				<td>@booking.BookingId</td>
+				<td>@booking.VenueId</td>
+				<td>@booking.EventId</td>
+				<td>@booking.BookingDate.ToString("yyy-mm-dd HH:mm")</td>
+
+				<td>
+					<a asp-action="Edit" asp-route-id="@booking.BookingId" class="btn-warning">Edit</a>
+					<a asp-action="Delete" asp-route-id="@booking.BookingId" class="btn-danger">Delete</a>
+					<a onclick="return confirm('Are you sure you want to delete this booking?');">Delete </a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-success">New Booking</a>
+

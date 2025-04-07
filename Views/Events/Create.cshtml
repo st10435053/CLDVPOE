@@ -1,0 +1,40 @@
+﻿@model EventEaseApp.Models.Event
+
+@{
+    ViewData["Title"] = "Add Event";
+}
+<h2>ViewData["Title"]</h2>
+
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="EventId"></label>
+        <input type="text" class="form-control" id="EventId" name="EventId" required />
+    </div>
+
+    <div class="form-group">
+        <label for="EventName"></label>
+        <input type="text" class="form-control" id="EventName" name="EventName" required />
+    </div>
+
+    <div class="form-group">
+        <label for="EventDescription"></label>
+        <input type="text" class="form-control" id="EventDescription" name="EventDescription" required />
+    </div>
+
+    <div class="form-group">
+        <label for="EventDate"></label>
+        <input type="text" class="form-control" id="EventDate" name="EventDate" required />
+    </div>
+    <div>
+        class="form-control" required
+        placeholder="Enter event date"/>
+    </div>
+
+    <div class="form-group">
+        <label for="VenueId"></label>
+        <input type="text" class="form-control" id="EventName" name="EventName" required />
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+<a asp-action="Index">Back to List</a>
